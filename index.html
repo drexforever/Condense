@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condensé</title>
+    <link rel="stylesheet" href="styles.css">
+    <script rel="scripts.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Condensé</h1>
+        <h3>Learn a lot in a short time</h3>
+            <nav>
+                <button onclick="scrollToColorGrid()">Scroll to Content</button>
+            <script>
+            function scrollToColorGrid() {
+                const colorGridSection = document.getElementById('color-grid');
+                if (colorGridSection) {
+                    colorGridSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+            </script>
+            </nav>
+    </header>
+    
+    <article>
+        Have you ever wanted to read a book but couldn't due to the lack of time ?
+        <br> That's exactly why Condensé has been created.
+        <br> You can now learn as much as if you read a book just in the time of a coffee break.
+    </article>
+
+    <h4>View our most popuplar summaries :</h4>
+
+    <section id="color-grid">
+        <button class="color-button" style="background-color: rgb(255, 170, 170);" onclick="window.location.href='atomic_habits.html'">
+            <p>Atomic Habits</p>
+        </button>
+        <button class="color-button" style="background-color: rgb(158, 246, 158);" onclick="window.location.href='ikigai.html'">
+            <p>Ikigai</p>
+        </button>
+        <button class="color-button" style="background-color: #ffff8f;" onclick="window.location.href='richdadpoordad.html'">
+            <p>Rich Dad, Poor Dad</p>
+        </button>
+        <button class="color-button" style="background-color: rgb(161, 161, 255);" onclick="window.location.href='deepwork.html'">
+            <p>Deep Work</p>
+        </button>
+        <button class="color-button" style="background-color: rgb(255, 168, 255);" onclick="window.location.href='thinkfaster.html'">
+            <p>Think Faster, Talk Smarter</p>
+        </button>
+        <button class="color-button" style="background-color: rgb(255, 217, 147);" onclick="window.location.href='lawsofpower.html'">
+            <p>48 Laws of <br>Power</p>
+        </button>
+    </section>
+
+    <footer>
+        <h4>Contact us : </h4>
+        <nav>
+            <button onclick="window.location.href='https://www.instagram.com'">Instagram</button>
+            <button onclick="window.location.href='https://www.linkedin.com'">LinkedIn</button>
+            <button onclick="window.location.href='mailto:someone@example.com'">Mail</button>
+        </nav>
+    </footer>
+
+    
+</body>
+</html>
