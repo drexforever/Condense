@@ -1,6 +1,6 @@
 # Condense
-Learn a lot in a short time
-"because your time is valuable, but your success is even more.
+Learn a lot in a short time <br>
+<b>because your time is valuable, but your success is even more.</b>
 
 This SaaS has been made to save a lot of time
 For everyone who want to read but don't have the time to, Condense is giving you summaries and explanations
