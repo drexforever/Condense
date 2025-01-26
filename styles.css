@@ -45,9 +45,11 @@ nav button {
 
 article {
     margin-top: 7vh;
-    text-align: center;
+    text-align:justify;
     font-size: larger;
     margin-bottom: 7vh;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 h4 {
