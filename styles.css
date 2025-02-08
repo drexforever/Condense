@@ -40,10 +40,15 @@ nav button {
 
     nav button:hover {
         background-color: cornsilk;
+        box-shadow: 0 0 0 1px black inset;
     }
 
 
 article {
+    text-align: center;
+    background-color: floralwhite;
+    padding: 2%;
+    border: 2px solid black;
     margin-top: 7vh;
     text-align:justify;
     font-size: larger;
@@ -102,7 +107,7 @@ section {
     border: 5px solid black;
     padding: 5px 5px;
     cursor: pointer;
-    margin-bottom: 0vh;
+    margin-bottom: 0px;
     margin-left:41vw;
     width: 15%;
     @media (min-width: 1px) {
@@ -113,6 +118,12 @@ section {
     @media (min-height: 1000px) {
         height: 35%;
     }
+
+}
+
+.ai_button:hover {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 0 1px black inset;
 
 }
 
@@ -130,10 +141,9 @@ img {
 
 #comparison-table {
     width: 70%;
-    height: 45vh;
-    margin-left: auto 20%;
+    margin-left: 20%;
     margin-top: 50px;
-    margin-bottom: 250px;
+    margin-bottom: 60px;
 }
 
 #comparison-table table {
