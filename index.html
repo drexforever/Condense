@@ -17,7 +17,7 @@
             function scrollToColorGrid() {
                 const colorGridSection = document.getElementById('color-grid');
                 if (colorGridSection) {
-                    colorGridSection.scrollIntoView({ behavior: 'smooth' });
+                    colorGridSection.scrollIntoView({ behavior:"smooth" });
                 }
             }
             </script>
@@ -67,9 +67,8 @@
                 
     </article>
 
-    <h4>View our most popuplar summaries :</h4>
-
     <section id="color-grid">
+        <h2>View our most popuplar summaries :</h2>
         <button class="color-button" style="background-color: rgb(255, 170, 170);" onclick="window.location.href='atomic_habits.html'">
             <p>Atomic Habits</p>
         </button>
@@ -89,6 +88,53 @@
             <p>48 Laws of <br>Power</p>
         </button>
     </section>
+
+    <h2 class="AI_TITLE">OR CREATE YOURS WITH AI</h2>
+    <button class="ai_button" onclick="window.location.href='ai.html'">
+        <img src="chatgpt-logo.png" alt="chatgpt's logo">
+    </button>
+
+    <article>
+        Thanks to our GPT based ai, you can sum up any book within <b>a click</b>.
+        Put any book in a nutshell, or even just a scheme which explains <b>anything you need to know</b>.
+    </article>
+
+        <section id="comparison-table">
+        <h2>Compare Our Offers</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Free Offer</th>
+                    <th>Premium Offer</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Access to Summaries</td>
+                    <td>2 / day</td>
+                    <td><b>Unlimited</b></td>
+                </tr>
+                <tr>
+                    <td>AI Summarization</td>
+                    <td>Text</td>
+                    <td><b>Text + Schemes and Images</b></td>
+                </tr>
+                <tr>
+                    <td>Ad-Free Experience</td>
+                    <td>No</td>
+                    <td><b>Yes</b></td>
+                </tr>
+                <tr>
+                    <td>Monthly Cost</td>
+                    <td>Free</td>
+                    <td><b>$3.99</b></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <p></p>
 
     <footer>
         <h4>Contact us : </h4>
