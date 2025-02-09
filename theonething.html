@@ -5,15 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Condensé - The One Thing</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        #content {
+            display: flex;
+            align-items: flex-start;
+        }
+        #onething_book {
+            background-color: yellow;
+            height: 250px;
+            width: 175px;
+            border: 2px solid black;
+            box-shadow: 5px 5px 5px rgba(205, 205, 31, 0.311);
+            margin: 10px;
+            font-weight: bolder;
+            text-align: center;
+            vertical-align: middle;
+            position: sticky;
+            text-decoration: underline;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+        #book {
+            height: 100px;
+            width: 100px;
+            vertical-align: middle;
+            margin-top: 50px;
+            padding: 10px;
+            border: 2px solid rgb(255, 255, 255);
+            box-sizing: border-box;
+            box-shadow: inset 5px 5px 5px rgba(205, 205, 31, 0.311);
+        }
+        article {
+            display: inline-block;
+            text-align: end;
+            margin-left: 20px;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Condensé</h1>
         <h3>Learn a lot in a short time</h3>
-            <nav>
-                <button onclick="window.location.href='index.html'">Home</button>
-                <button onclick="window.location.href='mylibrary.html'" style="margin-left: 50px;">Library</button>
-            </nav>
+        <nav>
+            <button onclick="window.location.href='index.html'">Home</button>
+            <button onclick="window.location.href='mylibrary.html'" style="margin-left: 50px;">Library</button>
+        </nav>
     </header>
+    <div id="content">
+        <div id="onething_book"><br>The One Thing <br><img id="book" src="60481.png" alt=""></div>
+        <article>
+            Maybe you’ve heard of the book <b>The One Thing</b> <br> by Gary Keller and Jay Papasan. It’s a bestseller that has helped thousands <br> of people focus on what matters most in their lives.
+        </article>
+    </div>
+    <img src="pareto-rule-explained_0.jpeg" style="display: flex; height: 40%; width: 40%; margin-left: 30%; margin-right: 30%; margin-top: 20px;">
 </body>
 </html>
