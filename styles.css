@@ -178,3 +178,10 @@ footer {
     background-color: floralwhite;
     border: 2px solid black;
 }
+
+footer nav {
+    display: inline-block;
+    margin: 0px;
+    text-align: center;
+    margin-bottom: 10px;
+}

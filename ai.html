@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ...existing code... -->
+    <title>Chatbot</title>
+    <style>
+        /* Add some basic styling */
+        body {
+            background-color:cornsilk;
+            font-family:'Gill Sans';
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        header {
+            background-color:floralwhite;
+            padding-bottom: 5vh;
+            border: 2px solid black;
+            padding-left: 5vw;
+        }
+        h1 {
+            display: inline-block;
+            margin-right: 5vw;
+            vertical-align: middle;
+        }
+
+        h3 {
+            display: inline-block;
+            vertical-align:middle;
+            margin-right: 35px;
+        }
+
+        nav {
+            width: 90vw;
+            display: inline-block;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+
+        nav button {
+            margin: 10px;
+            background-color: floralwhite;
+            border: 2px solid black;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bolder;
+        }
+
+        nav button:hover {
+            background-color: cornsilk;
+            box-shadow: 0 0 0 1px black inset;
+        }
+
+        #chat-container {
+            margin-top: 20px;
+            width: 80%;
+            max-width: 600px;
+            background: white;
+            box-shadow: 0 0 10px rgba(128, 81, 4, 0.581);
+            padding: 20px;
+            border: 2px solid black;
+        }
+        #messages {
+            height: 300px;
+            overflow-y: auto;
+            border-bottom: 2px solid #000000;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+        .message-container {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ffbb00;
+            margin-right: 10px;
+            border: #000000 2px solid;
+        }
+        .message {
+            flex: 1;
+        }
+        #input-container {
+            display: flex;
+        }
+        #prompt-input {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #000000;
+            border-radius: 4px;
+        }
+        #send-button {
+            padding: 10px 20px;
+            border: 2px solid #000000;
+            background-color: cornsilk;
+            font-weight: bolder;
+            color: rgb(0, 0, 0);
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    </style>
+    <script rel="app.py"></script>
+</head>
+<body>
+    <header>
+        <h1>Condensé</h1>
+        <h3>Because your time is valuable</h3>
+        <br>
+        <nav>
+            <button onclick="window.location.href='index.html'">Home</button>
+            <button onclick="window.location.href='mylibrary.html'" style="margin-left: 50px;">My Library</button>
+        </nav>
+    </header>
+    <div id="chat-container">
+        <div id="messages"></div>
+        <div id="input-container">
+            <input type="text" id="prompt-input" placeholder="Type your prompt here...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+    <script>
+        async function getAIResponse(prompt) {
+            try {
+                const response = await fetch('/get_ai_response', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ prompt: prompt })
+                });
+                const data = await response.json();
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                return data.response;
+            } catch (error) {
+                console.error('Error getting AI response:', error);
+                return 'Error: Unable to get AI response.';
+            }
+        }
+
+        document.getElementById('send-button').addEventListener('click', async function() {
+            var input = document.getElementById('prompt-input');
+            var message = input.value;
+            if (message.trim() !== '') {
+                var messageContainer = document.createElement('div');
+                messageContainer.className = 'message-container';
+
+                var profilePic = document.createElement('div');
+                profilePic.className = 'profile-pic';
+
+                var messageText = document.createElement('div');
+                messageText.className = 'message';
+                messageText.textContent = message;
+
+                messageContainer.appendChild(profilePic);
+                messageContainer.appendChild(messageText);
+
+                document.getElementById('messages').appendChild(messageContainer);
+                input.value = '';
+                document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;
+
+                // Get AI response
+                var aiResponse = await getAIResponse(message);
+                var aiMessageContainer = document.createElement('div');
+                aiMessageContainer.className = 'message-container';
+
+                var aiProfilePic = document.createElement('div');
+                aiProfilePic.className = 'profile-pic';
+                aiProfilePic.style.backgroundColor = '#ff5733'; // Different color for AI
+
+                var aiMessageText = document.createElement('div');
+                aiMessageText.className = 'message';
+                aiMessageText.textContent = aiResponse;
+
+                aiMessageContainer.appendChild(aiProfilePic);
+                aiMessageContainer.appendChild(aiMessageText);
+
+                document.getElementById('messages').appendChild(aiMessageContainer);
+                document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;
+            }
+        });
+    </script>
+</body>
+</html>
