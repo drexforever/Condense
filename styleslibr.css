@@ -1,0 +1,84 @@
+body {
+    background-color:cornsilk;
+    font-family:'Gill Sans';
+}
+
+header {
+    background-color:floralwhite;
+    padding-bottom: 5vh;
+    border: 2px solid black;
+    padding-left: 5vw;
+}
+
+h1 {
+    display: inline-block;
+    margin-right: 5vw;
+    vertical-align: middle;
+}
+
+h3 {
+    display: inline-block;
+    vertical-align:middle;
+}
+
+nav {
+    display:block;
+    margin: 0px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-right: 80px;
+}
+
+nav button {
+    background-color: floralwhite;
+    border: 2px solid black;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bolder;
+    }
+
+    nav button:hover {
+        background-color: cornsilk;
+        box-shadow: 0 0 0 1px black inset;
+    }
+
+section {
+    text-align: center;
+    padding: 2%;
+    margin-top: 7vh;
+    font-size: larger;
+    margin-bottom: 7vh;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.color-button {
+        font-size: larger;
+        width: 15vw;
+        @media (min-width: 1px) {
+            width: 20vw;
+            margin-right: 5%;
+        }
+        height: 35vh;
+        @media (min-height: 1000px) {
+            height: 35vh;
+        }
+    
+        margin: 10px;
+        display: inline-block;
+        border-radius: 2vw;
+        text-align: center;
+        font-weight: bolder;
+        vertical-align: middle;
+        border: 2px solid black;
+    
+        
+    }
+    
+.color-button:hover {
+        transition: all 0.1s;
+        filter: brightness(110%);
+        box-shadow: 0 0 0 1px black inset;
+    }
